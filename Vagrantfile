@@ -87,5 +87,31 @@ Vagrant.configure(2) do |config|
     sed -i "s#</tomcat-users>#  <user username=\\"admin\\" password=\\"secret\\" roles=\\"manager-gui,admin-gui\\"/>\\n</tomcat-users>#" /opt/tomcat/conf/tomcat-users.xml
     initctl reload-configuration
     initctl start tomcat
-  SHELL
+    curl -sL https://deb.nodesource.com/setup_7.x | bash -
+    apt-get install -y nodejs
+    apt-get install -y maven
+    apt-add-repository ppa:brightbox/ruby-ng
+    apt-get update
+    apt-get install -y ruby2.3 ruby2.3-dev
+    curl -sL https://rubygems.org/rubygems/rubygems-2.6.11.tgz >> rubygems2.6.10.tgz
+    tar xzvf rubygems2.6.10.tgz
+    sudo ruby setup.rb
+    debconf-set-selections <<< "mysql-server mysql-server/root_password password vagrant"
+    debconf-set-selections <<< "mysql-server mysql-server/root_password_again password vagrant"
+    apt-get install -y mysql-server-5.6
+    apt-get install -y mysql-client-5.6
+    apt-get install -y mysql-client-core-5.6
+    apt-get install -y libmysql-java
+    mysql -uroot -pvagrant -e "CREATE USER 'answer'@'localhost' IDENTIFIED BY 'answer99q';"
+    mysql -uroot -pvagrant -e "GRANT ALL PRIVILEGES ON *.* TO 'answer'@'localhost' WITH GRANT OPTION;"
+    mysql -uroot -pvagrant -e "GRANT ALL PRIVILEGES ON *.* TO 'answer'@'%' WITH GRANT OPTION;"
+    echo 'CLASSPATH=$CLASSPATH:/usr/share/java/mysql.jar' >> /home/vagrant/.bashrc
+    echo 'export CLASHPATH' >> /home/vagrant/.bashrc
+    echo 'JAVA_HOME="/usr/bin/java"' >> /home/vagrant/.bashrc
+    echo 'M3_HOME="/usr/share/maven"' >> /home/vagrant/.bashrc
+    echo 'RUBY_HOME="/usr/bin/ruby2.3"' >> /home/vagrant/.bashrc
+    echo 'RUBYGEMS_HOME="/usr/lib/ruby/2.3.0/rubygems"' >> /home/vagrant/.bashrc
+    echo 'PATH="$JAVA_HOME:$M2_HOME:$RUBY_HOME:$RUBYHOME:$PATH"' >> /home/vagrant/.bashrc
+    apt-get install -y ant
+    SHELL
 end
