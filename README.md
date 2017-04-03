@@ -1,6 +1,9 @@
 # gpconnect-vagrant
 See [https://github.com/nhs-digital/gpconnect](https://github.com/nhs-digital/gpconnect) for demonstrator project
 
+Install [Vagrant](https://www.vagrantup.com/downloads.html)
+Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+
 ```
 cd /var/www/html
 git clone https://github.com/nhs-digital/gpconnect
