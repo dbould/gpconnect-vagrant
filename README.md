@@ -4,8 +4,7 @@ See [https://github.com/nhs-digital/gpconnect](https://github.com/nhs-digital/gp
 ```
 cd /var/www/html
 git clone https://github.com/nhs-digital/gpconnect
-mkdir gpconnect/build
-cp build/build.xml gpconnect/build
+cp build/ gpconnect/build
 ant build
 ```
 
