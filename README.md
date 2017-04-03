@@ -1,15 +1,18 @@
 # gpconnect-vagrant
 See [https://github.com/nhs-digital/gpconnect](https://github.com/nhs-digital/gpconnect) for demonstrator project
 
-Build script for gpconnect in progress: [https://github.com/dbould/gpconnect](https://github.com/dbould/gpconnect)
+```
+cd /var/www/html
+git clone https://github.com/nhs-digital/gpconnect
+mkdir gpconnect/build
+cp build/build.xml gpconnect/build
+ant build
+```
 
-Build script needs merging to nhs-digital fork or maybe provisioning from this repo after it's fixed
+Wait a long time for the dependencies to download
 
-## TODO
-Provisioning for:
-- nodejs
-- Maven
-- Ruby
-- Ruby Gems
-- Environment variables
-- mysql (install, permissions)
+```
+ant run
+```
+
+Play with the app at http://192.168.20.81:19191
