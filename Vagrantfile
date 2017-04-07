@@ -113,5 +113,6 @@ Vagrant.configure(2) do |config|
     echo 'RUBYGEMS_HOME="/usr/lib/ruby/2.3.0/rubygems"' >> /home/vagrant/.bashrc
     echo 'PATH="$JAVA_HOME:$M2_HOME:$RUBY_HOME:$RUBYHOME:$PATH"' >> /home/vagrant/.bashrc
     apt-get install -y ant
+    apt-get install -y git
     SHELL
 end
