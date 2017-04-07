@@ -34,3 +34,6 @@ ant run
 ```
 
 Play with the app at http://192.168.20.81:19191
+
+## Known Issues
+There seems to be an intermittent issue where the JS doesn't build correctly. If you continue to get the Spring error page, it's probably worth deleting the gpconnect folder and re-cloning it.
