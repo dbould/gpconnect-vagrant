@@ -108,10 +108,12 @@ Vagrant.configure(2) do |config|
     echo 'CLASSPATH=$CLASSPATH:/usr/share/java/mysql.jar' >> /home/vagrant/.bashrc
     echo 'export CLASHPATH' >> /home/vagrant/.bashrc
     echo 'JAVA_HOME="/usr/bin/java"' >> /home/vagrant/.bashrc
-    echo 'M3_HOME="/usr/share/maven"' >> /home/vagrant/.bashrc
+    echo 'export JAVA_HOME'
+    echo 'M2_HOME="/usr/share/maven"' >> /home/vagrant/.bashrc
+    echo 'export M2_HOME'
     echo 'RUBY_HOME="/usr/bin/ruby2.3"' >> /home/vagrant/.bashrc
     echo 'RUBYGEMS_HOME="/usr/lib/ruby/2.3.0/rubygems"' >> /home/vagrant/.bashrc
-    echo 'PATH="$JAVA_HOME:$M2_HOME:$RUBY_HOME:$RUBYHOME:$PATH"' >> /home/vagrant/.bashrc
+    echo 'PATH="$JAVA_HOME/bin:$M2_HOME/bin:$RUBY_HOME:$RUBYHOME:$PATH"' >> /home/vagrant/.bashrc
     apt-get install -y ant
     apt-get install -y git
     SHELL
