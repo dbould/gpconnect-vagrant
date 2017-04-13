@@ -1,4 +1,7 @@
 # gpconnect-vagrant
+
+This project contains a complete environment for the GP Connect Demonstrator project.  It runs Ubuntu complete with required installed packages (Java8, Tomcat, Maven etc), so you'll only need to run a few commands to go from no environment to being able to use the app.
+
 See [https://github.com/nhs-digital/gpconnect](https://github.com/nhs-digital/gpconnect) for demonstrator project
 
 Install [Vagrant](https://www.vagrantup.com/downloads.html)
