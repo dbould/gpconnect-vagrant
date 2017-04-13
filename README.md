@@ -15,12 +15,12 @@ cd html
 git clone https://github.com/nhs-digital/gpconnect
 ```
 
-Jump into vagrant box
+Jump into the vagrant box
 ```
 vagrant ssh
 ```
 
-Move to build script and build
+Move to build folder and build
 ```
 cd /var/www/html/gpconnect/build
 ant build
