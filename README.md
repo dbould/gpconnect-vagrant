@@ -4,16 +4,15 @@ See [https://github.com/nhs-digital/gpconnect](https://github.com/nhs-digital/gp
 Install [Vagrant](https://www.vagrantup.com/downloads.html)
 Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-Start the Vagrant box by type this in this checked out directory:
+Start the Vagrant box by typing this in this in the project root:
 ```
 vagrant up
 ```
 
-Now navigate to the webserver defaul directory, clone gpconnect demonstrator and build the project
+Now navigate to the mapped webserver directory and checkout the GP Connect project
 ```
 cd html
 git clone https://github.com/nhs-digital/gpconnect
-mv build/ gpconnect/build
 ```
 
 Jump into vagrant box
@@ -23,7 +22,7 @@ vagrant ssh
 
 Move to build script and build
 ```
-cd /var/www/html
+cd /var/www/html/gpconnect/build
 ant build
 ```
 
